@@ -1,0 +1,119 @@
+\documentclass{cumcmthesis}
+%\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
+
+\usepackage{tabularx}
+\title{论文题目}
+\tihao{C}            % 题号
+\baominghao{202217241200}    % 报名号
+\schoolname{华中科技大学}
+\membera{卢凯}
+\memberb{陈铭锐}
+\memberc{房怿宽}
+\supervisor{胡勇}
+\yearinput{2022}     % 年
+\monthinput{09}      % 月
+\dayinput{15}        % 日
+
+\begin{document}
+	\maketitle
+	\begin{abstract}
+		摘要的具体内容。
+		\keywords{关键词1\quad  关键词2\quad   关键词3}
+	\end{abstract}
+	%\tableofcontents
+	
+	
+%----------- 正文 ----------
+%----------- 一、问题重述 ----------
+	\section{问题重述}
+		\subsection{问题背景}
+		\par 
+		\subsection{待求解的问题}
+		\par 
+			\begin{enumerate}
+				\item{问题一:}
+				\item{问题二:}
+				\item{问题三:}
+			\end{enumerate}
+%----------- 二、问题分析 ----------
+	\section{问题分析}
+		\subsection{问题一:}
+		\subsection{问题二:}
+		\subsection{问题三:}
+%----------- 三、模型的假设与约定 ----------
+	\section{模型的假设与约定}
+		\begin{itemize}
+			\item{} one
+			\item{} two
+			\item{} three
+		\end{itemize}
+%----------- 四、符号说明及名词定义 ----------
+	\section{符号说明及名词定义}
+		\begin{center}
+			\begin{table}[h]
+				\caption{本论文所使用的符号}
+				\begin{tabularx}{\textwidth}{p{0.08\textwidth}X}
+					\toprule	
+					
+					$D_i$ & 编号为$i$的无人机的理想位置  \\
+					$\widehat{D_i}$ & 编号为$i$的无人机的有偏实际位置  \\
+					$D_i(\rho,\theta)$ & 用极坐标表示的无人机的位置 \\
+					  
+					$\overrightarrow{D_iD_k}$ & 从$D_i$指向$D_k$的矢量 \\
+					$\omega_i$      & 编号为$i$的无人机的误差矢量，即$\overrightarrow{\widehat{D_i}D_i}$ \\
+					$\bigodot O_i$    & 第$i$个理想圆  \\
+					
+					$hc_k$     & Holding cost of product k per unit and period;holding cost of product k per unit and period;holding cost of product k per unit and period   \\
+					$hc_k$     & holding cost of product k per unit and period   \\
+					oc   & overtime costs per unit   \\
+					$M_{kt}$   & bignumber for product k in period t\\
+					$pc_{k}$   & production cost of product k per unit\\
+					$pc^r_{k}$ & remanufacturing cost of product k per unit\\
+					$sc_{k}$   &  setup cost of product k\\
+					$sc^r_{k}$ &  setup cost of returned product k\\
+					$tp_{k}$   &  production time for one unit of product k\\
+					$tp^r_{k}$ & remanufacturing time for one unit of product k\\
+					$ts_{k}$   & setup time of product k\\
+					$ts^r_{k}$ & setup time of returned product k\\
+					
+					 
+					$BL_{kt}$  & backlog of product k at the end of period t\\
+					$D_{kt}$   & external demand of product k in period t  \\
+					$I_{kt}$   & net inventory of product k at the end of period t  \\
+					$I^r_{kt}$ & net inventory of returns of product k at the end of period t  \\
+					$IP_{kt} $  & physical inventory of product k at the end of period t \\
+					$IP^r_{kt}$   & physical inventory of recoverables at the end of period t \\
+					$R_{kt}$   &  returns of product k in period t\\
+					$SF^r_{kt}$   &  Shortfall of recoverables of product k in t \\
+					\bottomrule
+				\end{tabularx}
+			\end{table}
+		
+		\begin{tabular}{cc}
+				\hline
+				\makebox[0.3\textwidth][c]{符号}	&  \makebox[0.4\textwidth][c]{意义} \\ \hline
+				D	    & 木条宽度（cm） \\ \hline
+		\end{tabular}
+		\end{center}
+%----------- 五、模型的建立与求解 ----------
+	\section{模型的建立与求解}
+		\subsection{问题一}
+			\subsubsection{问题一模型的建立}
+			\subsubsection{问题一的具体求解}
+			
+		\subsection{问题二}
+			\subsubsection{title}
+			\subsubsection{title}
+			\subsubsection{title}
+		\subsection{问题三}
+			\subsubsection{title}
+			\subsubsection{title}
+			\subsubsection{title}
+	\section{总结}
+	\begin{thebibliography}{9}%宽度9
+		\bibitem{bib:one} ....
+	\end{thebibliography}
+	\begin{appendices}
+		附录的内容。
+	\end{appendices}
+\end{document}
