@@ -130,6 +130,49 @@
 			\paragraph{可行域分割}
 			对于所有可能的$D_j$,现已确定$\angle D_jD_2D_0 = \alpha_1$,$|D_jD_0|= r$,对于此类定弦定角问题，有优弧$\overset{\frown}{D_jD_2D_0}$上的点为所有可能的$D_2$的位置。
 			对于确定的$\angle D_0D_2D_1 = \alpha_2$,$|D_1D_0|= r$优弧$\overset{\frown}{D_0D_2D_1}$上的所有点为所有可能的的$D_2$的位置。
+			\begin{figure}[htb]
+				\centering
+				\includegraphics[width=0.5\linewidth]{./figures/3}
+				\caption{$\angle D_3D_2D_0$ 的可行域$\overset{\frown}{D_3D_2D_0}$与$\angle D_0D_2D_1$ 的可行域$\overset{\frown}{D_0D_2D_1}$}
+				\label{fig3}
+			\end{figure}
+		
+		
+			如图\ref{fig3}所示，对于有微小偏差的无人机$D_2'$,当假设匿名第三者为无人机3时，有可能位置$P$。同理，分别建立匿名第三者$j=4,5,6$时，$D_2'$的可能位置，分别标记为$Q,R,S$,如图\ref{fig4}.
+			
+			\begin{figure}[htb]
+				\centering
+				\subfloat[所有可能可行域集合]{\includegraphics[width=0.4\linewidth]{../figures/4}}
+				\subfloat[$D_2'$的可能位置$P,Q,R$]{\includegraphics[width=0.4\linewidth]{../figures/5}}
+				\caption{$D_2'$的可能位置的求解}
+				\label{fig4}
+			\end{figure}
+			
+			至此，对于不确定匿名第三者的情形，飞机$D_i$($D_2$)由于不能确定第三者编号产生了自己的位置猜测$P,Q,R,S$,在图\ref{fig4}的情形下，易确定$R,S$的情形不符合题设从而排除，然而我们观察到当2号机偏差很大时（即$\lVert\omega_i\rVert =\overrightarrow{D_2D_2'} $很大时）有可能出现情形如图\ref{fig6}.此时若认为第三者为4号机，则会有位置错误估计Q，然而在此种情形下，我们认为其实际位置应为图中P点的位置。因为此种情况的出现，我们要对“偏差较小”进行数学定义。
+			\begin{figure}[htb]
+				\centering
+				\includegraphics[width=0.5\linewidth]{./figures/6}
+				\caption{偏差很大时的一种特殊情况}
+				\label{fig6}
+			\end{figure}
+		
+		
+			\paragraph{多解分析}
+			因为在三架飞机定位的模式下，匿名第三者未知。这种情况下待定位飞机对于自己的位置估计就可能出现多解的情况。然而我们发现，在待定位飞机距离无偏差位置很远的时候，不能通过解的合理性排除多解情况。所以我们进一步探索了多解的可排除情况的边界条件。
+			
+			
+			当$ D_2' $ 运动在区域：$ \lVert \omega _2 \rVert \le r_0 $ 内时，$ \text{运动点}P\text{、}Q\text{、}R\text{、}S\text{的集合分别记为}\mathcal{P}\text{、}\mathcal{Q}\text{、}\mathcal{R}\text{、}\mathcal{S} $ 建立动态几何解析模型，使$ D_2' $在其运动区域边界上运动时，跟踪$P,Q,R,S$的轨迹，其内部即为$\mathcal{P}\text{、}\mathcal{Q}\text{、}\mathcal{R}\text{、}\mathcal{S}$.
+			
+			\begin{figure}[htb]
+				\centering
+				\subfloat[$r_0$很小时的运动轨迹情况]{\includegraphics[width=0.43\linewidth]{../figures/7}}
+				\subfloat[$r_0$处于临界时的运动轨迹情况]{\includegraphics[width=0.4\linewidth]{../figures/8}}
+				\\
+				\subfloat[$r_0$很大时的运动轨迹情况]{\includegraphics[width=0.4\linewidth]{../figures/9}}
+				\caption{}
+				\label{fig7}
+			\end{figure}
+			可以看出，$r_0$很大时，
 			\subsubsection{title}
 			\subsubsection{title}
 		\subsection{问题三}
