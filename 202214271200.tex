@@ -163,16 +163,44 @@
 			
 			当$ D_2' $ 运动在区域：$ \lVert \omega _2 \rVert \le r_0 $ 内时，$ \text{运动点}P\text{、}Q\text{、}R\text{、}S\text{的集合分别记为}\mathcal{P}\text{、}\mathcal{Q}\text{、}\mathcal{R}\text{、}\mathcal{S} $ 建立动态几何解析模型，使$ D_2' $在其运动区域边界上运动时，跟踪$P,Q,R,S$的轨迹，其内部即为$\mathcal{P}\text{、}\mathcal{Q}\text{、}\mathcal{R}\text{、}\mathcal{S}$.
 			
-			\begin{figure}[htb]
+			\begin{figure}[H]
 				\centering
 				\subfloat[$r_0$很小时的运动轨迹情况]{\includegraphics[width=0.43\linewidth]{../figures/7}}
 				\subfloat[$r_0$处于临界时的运动轨迹情况]{\includegraphics[width=0.4\linewidth]{../figures/8}}
 				\\
 				\subfloat[$r_0$很大时的运动轨迹情况]{\includegraphics[width=0.4\linewidth]{../figures/9}}
-				\caption{}
+				\caption{不同$r_0$的取值下$\mathcal{P}\text{、}\mathcal{Q}\text{、}\mathcal{R}\text{、}\mathcal{S}$的边界分布}
 				\label{fig7}
 			\end{figure}
-			可以看出，$r_0$很大时，
+			从图\ref{fig7}可以看出，$r_0$很大时，$\mathcal{P}\text{、}\mathcal{Q}$的边界有重叠，即$
+			\exists p\in \mathcal{P},\ q\in \mathcal{Q}\ \ s.t.\ \left| \overrightarrow{pD_2} \right|\ >\left| \overrightarrow{qD_2} \right|$ 此时根据如果根据预测点到理想点最近的原则确定匿名无人机编号，将会误认为是$D_4$发射的信号，进而将自己的位置误认为$q$的位置。如图\ref{fig4}所示，此时无人机的实际位置为P但是根据上述算法会将其误认为Q。
+			
+			使用动态几何求解器，我们求得在上述情形下$\mathcal{P}\text{、}\mathcal{Q}$边界相切时，$r_{2max}\approx 0.228\left| \overrightarrow{D_0D_1} \right|$。
+			进一步，我们探索了匿名无人机变化与边界情况$r_0$的最大取值之间的关系。我们得出结论：$r_0$的最大取值与匿名无人机的的变化无关，只与待测无人机的编号有关。
+			\begin{figure}[H]
+				\centering
+				\subfloat[匿名无人机为$D_3$时的边界情况]{\includegraphics[width=0.45\linewidth]{../figures/10}}
+				\subfloat[匿名无人机为$D_4$时的边界情况]{\includegraphics[width=0.45\linewidth]{../figures/11}}
+				\caption{不同匿名无人机情况对于$D_2$唯一解边界情况的影响}
+				\label{fig10}
+			\end{figure}
+		
+			进一步，我们探索了不同待测无人机的最大误差范围。
+			根据我们的模拟，我们有如下临界情况：
+			\begin{figure}[H]
+				\centering
+				\subfloat[待测无人机为$D_3$时的边界情况]{\includegraphics[width=0.45\linewidth]{../figures/12}}
+				\subfloat[待测无人机为$D_4$时的边界情况]{\includegraphics[width=0.45\linewidth]{../figures/13}}
+				\\
+				\subfloat[待测无人机为$D_5$时的边界情况]{\includegraphics[width=0.5\linewidth]{../figures/14}}
+				\caption{不同待测无人机唯一解边界情况}
+				\label{fig12}
+			\end{figure}
+			令$r_i$为第i个无人机作为待测无人机时，有单一解时$\overrightarrow{\widehat{D_i}D_i}$的模长。
+			我们分别得出，$r_{3max}\approx 0.172\left| \overrightarrow{D_0D_1} \right|,r_{4max}\approx 0.162\left| \overrightarrow{D_0D_1} \right|,r_{5max}\approx 0.169\left| \overrightarrow{D_0D_1} \right|$。
+			根据对称性，我们同理可得$D_6,D_7,D_8,D_9$分别为待测无人机的情况。
+			
+			综上，我们进而给出对于任意的无人机，其“偏差较小”的数学定义为$|\overrightarrow{\widehat{D_i}D_i|}<0.162|\overrightarrow{\widehat{D_0}D_1}|$。若知道具体编号，则可以适用不同的边界情况数据。
 			\subsubsection{title}
 			\subsubsection{title}
 		\subsection{问题三}
