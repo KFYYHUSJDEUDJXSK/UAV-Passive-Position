@@ -1,5 +1,5 @@
-\documentclass{cumcmthesis}
-%\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
+%\documentclass{cumcmthesis}
+\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
 %\usepackage{graphicx}
 %\usepackage{subfigure}
 \usepackage{tabularx}
@@ -26,19 +26,21 @@
 	
 %----------- 正文 ----------
 %----------- 一、问题重述 ----------
-	\section{问题重述}
+		\section{问题重述}
 		\subsection{问题背景}
-		\par 
+		\par 无人机是“无人驾驶空中飞行器”（UAV）的简称。1917年首先由英国研制出来最先承担起军事功能，诸如目标定位跟踪技术在航空、航天和航海领域都有十分重要的地位。无源定位技术是被动工作方式的目标定位技术，利用未知目标的辐射源信号进行定位和导航。
 		\subsection{待求解的问题}
 		\par 
-			\begin{enumerate}
-				\item{问题一:}
-				\item{问题二:}
-				\item{问题三:}
-			\end{enumerate}
+		\begin{enumerate}
+			\item{\textbf{问题一中第一问}:}在已知三架编号已知、位置无偏差的无人机且其中一架为位于圆心的无人机FY$ 00 $为承担发射信号任务的无人机的既定条件下，根据圆周上其他的位置存在偏差的无人机被动接受的方向信号建立模型来完成对该被动接收信号无人机的纯方位无源定位。
+			\item{\textbf{问题一中第二问}:}在编队方式仍为圆周，且无人机数目仍为10架的相同条件下，修改发射信号的无人机为编号FY$ 00 $和FY$ 01 $的无人机与待定数量未知编号的无人机。发射信号的无人机的位置没有偏差，确定除了已知编号的无人机FY$ 00 $和无人机FY$ 01 $外，最少需要几架未知编号的无人机作为位置无偏差的无人机来发射信号以期望实现无人机的有效定位。
+			\item{\textbf{问题一中第三问}:}在编队方式与无人机数目基础条件均不变的基础上，设定无人机所处圆周的半径为100m。初始时刻无人机的位置确定但略有偏差，试确定在编号为FY$ 00 $的无人机和圆周上数量不超过三架的无人机作为发射信号的无人机的条件下，忽略每次调整的时间，调整到理想位置使九架无人机均匀的分布在某个圆周上的最优调整方案。
+			\item{\textbf{问题二}:}
+		\end{enumerate}
 %----------- 二、问题分析 ----------
 	\section{问题分析}
 		\subsection{问题一:}
+		在第一题的大背景下，我们可以知道，无人机的数目和编队的方式，并且给定的条件为有三架已知编号且位置没有误差的无人机作为发射信号的无人机。我们需要根据其余位置有偏差的无人机被动接受到的方位信号即三个角度信息从而实现定位。
 		\subsection{问题二:}
 		在问题二中，我们首先假设对于任意的$D_i$,通过测量$D_0,D_1,D_j$三个无人机的位置，得到两个小角$\alpha_1,\alpha_2$，进而能够确定自己在$D_0 - D_1$坐标系中的位置。
 		
@@ -68,11 +70,10 @@
 %----------- 四、符号说明及名词定义 ----------
 	\section{符号说明及名词定义}
 		\begin{center}
-			\begin{table}[h]
+			\begin{table}[H]
 				\caption{本论文所使用的符号}
 				\begin{tabularx}{\textwidth}{p{0.08\textwidth}X}
 					\toprule	
-					
 					$D_i$ & 编号为$i$的无人机的理想位置  \\
 					$\widehat{D_i}$ & 编号为$i$的无人机的有偏实际位置  \\
 					$D_i(\rho,\theta)$ & 用极坐标表示的无人机的位置 \\
@@ -80,44 +81,34 @@
 					$\overrightarrow{D_iD_k}$ & 从$D_i$指向$D_k$的矢量 \\
 					$\omega_i$      & 编号为$i$的无人机的误差矢量，即$\overrightarrow{\widehat{D_i}D_i}$ \\
 					$\bigodot O_i$    & 第$i$个理想圆  \\
-					
-					$hc_k$     & Holding cost of product k per unit and period;holding cost of product k per unit and period;holding cost of product k per unit and period   \\
-					$hc_k$     & holding cost of product k per unit and period   \\
-					oc   & overtime costs per unit   \\
-					$M_{kt}$   & bignumber for product k in period t\\
-					$pc_{k}$   & production cost of product k per unit\\
-					$pc^r_{k}$ & remanufacturing cost of product k per unit\\
-					$sc_{k}$   &  setup cost of product k\\
-					$sc^r_{k}$ &  setup cost of returned product k\\
-					$tp_{k}$   &  production time for one unit of product k\\
-					$tp^r_{k}$ & remanufacturing time for one unit of product k\\
-					$ts_{k}$   & setup time of product k\\
-					$ts^r_{k}$ & setup time of returned product k\\
-					
-					 
-					$BL_{kt}$  & backlog of product k at the end of period t\\
-					$D_{kt}$   & external demand of product k in period t  \\
-					$I_{kt}$   & net inventory of product k at the end of period t  \\
-					$I^r_{kt}$ & net inventory of returns of product k at the end of period t  \\
-					$IP_{kt} $  & physical inventory of product k at the end of period t \\
-					$IP^r_{kt}$   & physical inventory of recoverables at the end of period t \\
-					$R_{kt}$   &  returns of product k in period t\\
-					$SF^r_{kt}$   &  Shortfall of recoverables of product k in t \\
 					\bottomrule
 				\end{tabularx}
 			\end{table}
-		
-		\begin{tabular}{cc}
-				\hline
-				\makebox[0.3\textwidth][c]{符号}	&  \makebox[0.4\textwidth][c]{意义} \\ \hline
-				D	    & 木条宽度（cm） \\ \hline
-		\end{tabular}
+
 		\end{center}
 %----------- 五、模型的建立与求解 ----------
 	\section{模型的建立与求解}
-		\subsection{问题一}
-			\subsubsection{问题一模型的建立}
-			\subsubsection{问题一的具体求解}
+		\subsection{问题一中第一问}
+		\subsubsection{问题一中第一问模型的建立}
+		\par 问题一首先限定了编队的飞机数目为10架并且编队方式为圆形编队，且要求其中一架无人机（编号为FY$ 00 $）位于圆心，而其余九架无人机位于相应的圆周上面。值得注意的是，无人机会基于自身感知的高度信息，均保持在同一个高度上飞行，因此我们可以将问题的求解模型确定在一个高度平面来方便求解下列各个问题。
+		\par 
+		而第一题的第一问则进一步明确无人机的角色：位于圆心的无人机（FY$ 00 $）和编队中另 $ 2 $ 架无人机发射信号，而其他无人机则是被动接受该三架无人机发射信号的角色。同时一个重要的条件是：模型要求在发射信号的无人机位置无偏差且编号已知的情况下完成其他被动接受信号的无人的定位。基于上述已知设定信息，我们可以首先将定位问题转换为二维平面上的位置求解问题。因为圆周的位置具有\textbf{高度对称性}，因此不妨假设其中两台圆周上已知编号的信号发射无人机其中一台的编号为FY$ 01 $.因此我们可以在二维平面上选取编号为FY$ 00 $的无人机为原点，编号为FY$ 01 $的无人机为$ X $轴正方向的一点，从而建立笛卡尔右手坐标系如下图\ref{1-1}。
+		\begin{figure}[htb]
+			\centering
+			\includegraphics[width=0.7\linewidth]{./figures/Question1-1.png}
+			\caption{问题一：定位模型坐标系}
+			\label{1-1}
+		\end{figure}
+		在已知三架编号已知且位置无偏差的无人机后，我们可以在该坐标系中按直角坐标。同时对于编队中其他待定位的无人机，我们都可以得到与三架发射信号无人机的方位信息：任意两架发射信号无人机与待定位无人机的夹角。夹角代表着方向向量直接的位置关系，故应在表示待定位无人机的直角坐标后确定发射信号的无人机与待定位无人机连线的方向向量，进而再表示出夹角然后求解。
+		\subsubsection{问题一中第一问的具体求解}
+		\par 基于第一问的定位模型，我们建立以已知编号FY$ 00 $ 的无人机为原点$ D_0 $ ，而另外两架已知编号的$ \text{无人机}i\text{与无人机}j $ $ \text{无人机}i\text{与无人机}j $ 分别设为$ D_i\text{与}D_j $ ，其极坐标对应的为$ \left( r,\beta _i \right) ,\left( r,\beta _j \right)  $ ，其中$ \beta _i\text{与}\beta _j $ 均可通过编号得到，为已知数据。不失一般性，我们将其他所有待定位的无人机$ X $ 的极坐标设为$ \left( \rho ,\theta \right)  $ 。根据题意我们可知无人机$ X $ 会接收到位于设定原点的无人机$ 00 $ 和$ \text{无人机}i\text{与无人机}j $ 发射的电磁信号，进而可以提取的信号为：该无人机$ X $ 与任意两架发射信号的$ \text{无人机}i\text{与无人机}j $ 连线之间的夹角，即$ \left( \begin{array}{c} 	3\\ 	2\\ \end{array} \right)  $ 共三个角度的方位信息。根据几何知识，可以得到该三个角中最大的角为其余两个角的和。因此，为减少信息的冗余性，我们只利用其中两个角：$$ \alpha _i=\angle OXi\text{，}\alpha _j=\angle OXj $$ 
+		\par 至此，我们从极坐标转至直角坐标系： 
+		$$ D_0\text{：}\left( 0,0 \right)  $$ $$ D_i\text{：}\left( r\cos \beta _i,r\sin \beta _i \right)  $$ $$ D_j\text{：}\left( r\cos \beta _j,r\sin \beta _j \right)  $$ $$ D_X\text{：}\left( \rho \cos \theta ,\rho \sin \theta \right)  $$ 
+		\par 因此可以进而得到三个向量：
+		$$ \overrightarrow{D_0D_X}=\left( \rho \cos \theta ,\rho \sin \theta \right)  $$ $$ \overrightarrow{D_iD_X}=\left( \rho \cos \theta -r\cos \beta _i,\rho \sin \theta -r\sin \beta _i \right)  $$ $$ \overrightarrow{D_jD_X}=\left( \rho \cos \theta -r\cos \beta _j,\rho \sin \theta -r\sin \beta _j \right)  $$ 	
+		\par 紧接着，我们通过三个向量分别利用余弦定理，分别表示出$ \alpha _i\text{与}\alpha _j $: 
+		$$ \cos \alpha _k=\frac{\rho ^2\sin ^2\theta -r\rho \cos \beta _k\cos \theta +\rho ^2\cos ^2\theta -r\rho \sin \beta _k\sin \theta}{\rho ·\sqrt{\rho ^2\sin ^2\theta +r^2\sin ^2\beta _k-2r\rho \sin \beta _k\sin \theta +\rho ^2\cos ^2\theta +r^2\cos ^2\beta _k-2r\rho \cos \beta _k\cos \theta}} $$ $$ \text{即：}\cos \alpha _k=\frac{\rho -r\cos \left( \theta -\beta _k \right)}{\sqrt{\rho ^2+r^2-2\rho r\cos \left( \theta -\beta _k \right)}}\ \ \ \ \ \left( k=i,j \right)  $$ 
+		\par 由此求解 两个方程：$ \text{通过}\frac{\rho}{r}\text{和}\theta \text{表示的}D_X\text{具体坐标} $ 从而完成定位。
 			
 		\subsection{问题二}
 			经过我们的研究，我们认为需要除了在圆心的0号，还需要在圆弧上的1号和另外一个j号共三架飞机发射信号才能确定任意一架飞机i的位置。我们的位置解算算法遵循机组组态分析、推断匿名第三者编号、可行域分割的步骤求出$D_i$的坐标。在使用逐步分割可行域的方式求解位置坐标时，我们针对多解的情况，着重讨论了对于“略有偏差”的数学定义。
