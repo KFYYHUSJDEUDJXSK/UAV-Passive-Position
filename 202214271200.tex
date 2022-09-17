@@ -3,6 +3,7 @@
 %\usepackage{graphicx}
 %\usepackage{subfigure}
 \usepackage{tabularx}
+\usepackage{yhmath}
 \title{论文题目}
 \tihao{C}            % 题号
 \baominghao{202217241200}    % 报名号
@@ -14,7 +15,9 @@
 \yearinput{2022}     % 年
 \monthinput{09}      % 月
 \dayinput{15}        % 日
-
+\DeclareSymbolFont{yhlargesymbols}{OMX}{yhex}{m}{n}
+\DeclareSymbolFont{ugmL}{OMX}{mdugm}{m}{n}
+\DeclareMathAccent{\wideparen}{\mathord}{yhlargesymbols}{"F3}
 \begin{document}
 	\maketitle
 	\begin{abstract}
@@ -39,10 +42,10 @@
 		\end{enumerate}
 %----------- 二、问题分析 ----------
 	\section{问题分析}
-		\subsection{问题一:}
+		\subsection{问题一(1):}
 		在第一题的大背景下，我们可以知道，无人机的数目和编队的方式，并且给定的条件为有三架已知编号且位置没有误差的无人机作为发射信号的无人机。我们需要根据其余位置有偏差的无人机被动接受到的方位信号即三个角度信息从而实现定位。
-		\subsection{问题二:}
-		在问题二中，我们首先假设对于任意的$D_i$,通过测量$D_0,D_1,D_j$三个无人机的位置，得到两个小角$\alpha_1,\alpha_2$，进而能够确定自己在$D_0 - D_1$坐标系中的位置。
+		\subsection{问题一(2):}
+		在问题一(2)中，我们首先假设对于任意的$D_i$,通过测量$D_0,D_1,D_j$三个无人机的位置，得到两个小角$\alpha_1,\alpha_2$，进而能够确定自己在$D_0 - D_1$坐标系中的位置。
 		
 		可以假定的是，对于任意的$D_i$，在接收其他无人机的发射信号时，有以下公共知识：
 		\begin{itemize}
@@ -111,20 +114,23 @@
 		\par 由此求解 两个方程：$ \text{通过}\frac{\rho}{r}\text{和}\theta \text{表示的}D_X\text{具体坐标} $ 从而完成定位。
 			
 		\subsection{问题二}
-			经过我们的研究，我们认为需要除了在圆心的0号，还需要在圆弧上的1号和另外一个j号共三架飞机发射信号才能确定任意一架飞机i的位置。我们的位置解算算法遵循机组组态分析、推断匿名第三者编号、可行域分割的步骤求出$D_i$的坐标。在使用逐步分割可行域的方式求解位置坐标时，我们针对多解的情况，着重讨论了对于“略有偏差”的数学定义。
+			经过我们的研究，我们认为需要除了在圆心的0号，还需要在圆弧上的1号和另外一个j号共三架飞机发射信号才能确定任意一架飞机i的位置。所以我们
+			
+			
+			我们的位置解算算法遵循机组组态分析、推断匿名第三者编号、可行域分割的步骤求出$D_i$的坐标。在使用逐步分割可行域的方式求解位置坐标时，我们针对多解的情况，着重讨论了对于“略有偏差”的数学定义。
 			\subsubsection{算法的求解过程分析}
-			对于问题$D_i = f(\alpha_1, \alpha_2)$，我们首先需要确定第三架飞机是标签为几的飞机。以待测飞机为2号机，匿名第三信号发射机为3号机为例，建立数学几何模型。
+			对于问题$D_i = f(\alpha_1, \alpha_2)$，因为第一问中我们已经求解出了对于确定圆周上两个信号发射飞机的编号时，待测飞机位置的解析算法。本问我们首先需要确定第三架飞机是标签为几的飞机。以待测飞机为2号机，匿名第三信号发射机为3号机为例，建立数学几何模型并阐释我们的算法。
 			\paragraph{机组组态分析}
-			待测飞机为2号机的情况下，2号机接收到的三个角度值遵循$\angle D_jD_2D_1 =\angle D_jD_2D_0 + \angle D_jD_2D_1$,符合\ref{fig1}中所示组态1的类型。
+			待测飞机为2号机的情况下，2号机接收到的三个角度值遵循$\angle D_jD_2D_1 =\angle D_jD_2D_0 + \angle D_jD_2D_1$,符合图\ref{fig1}中所示组态1的类型。
 			\paragraph{匿名第三者位置分析}
 			在组态1的情况下，匿名第三者编号$j=3,4,5,6$中的一个。
-			\paragraph{可行域分割}
-			对于所有可能的$D_j$,现已确定$\angle D_jD_2D_0 = \alpha_1$,$|D_jD_0|= r$,对于此类定弦定角问题，有优弧$\overset{\frown}{D_jD_2D_0}$上的点为所有可能的$D_2$的位置。
-			对于确定的$\angle D_0D_2D_1 = \alpha_2$,$|D_1D_0|= r$优弧$\overset{\frown}{D_0D_2D_1}$上的所有点为所有可能的的$D_2$的位置。
+			\paragraph{可行域}
+			对于所有可能的$D_j$,现已确定$\angle D_jD_2D_0 = \alpha_1$,$|D_jD_0|= r$,对于此类定弦定角问题，有优弧$\wideparen{D_jD_2D_0}$上的点为所有可能的$D_2$的位置。
+			对于确定的$\angle D_0D_2D_1 = \alpha_2$,$|D_1D_0|= r$优弧$\wideparen{D_0D_2D_1}$上的所有点为所有可能的的$D_2$的位置。
 			\begin{figure}[htb]
 				\centering
 				\includegraphics[width=0.5\linewidth]{./figures/3}
-				\caption{$\angle D_3D_2D_0$ 的可行域$\overset{\frown}{D_3D_2D_0}$与$\angle D_0D_2D_1$ 的可行域$\overset{\frown}{D_0D_2D_1}$}
+				\caption{$\angle D_3D_2D_0$ 的可行域$\wideparen{D_3D_2D_0}$与$\angle D_0D_2D_1$ 的可行域$\wideparen{D_0D_2D_1}$}
 				\label{fig3}
 			\end{figure}
 		
@@ -192,6 +198,11 @@
 			根据对称性，我们同理可得$D_6,D_7,D_8,D_9$分别为待测无人机的情况。
 			
 			综上，我们进而给出对于任意的无人机，其“偏差较小”的数学定义为$|\overrightarrow{\widehat{D_i}D_i|}<0.162|\overrightarrow{\widehat{D_0}D_1}|$。若知道具体编号，则可以适用不同的边界情况数据。
+			
+			观察第三问中给出的数据，发现所有的无人机有偏位置坐标均符合我们对于“偏差较小”的定义，我们认为此定义适用于本题的所有情形。
+			
+			\paragraph{算法总结}
+			
 			\subsubsection{title}
 			\subsubsection{title}
 		\subsection{问题三}
@@ -199,7 +210,6 @@
 			\subsubsection{title}
 			\subsubsection{title}
 	\section{总结}
-	Test Test Test
 	\begin{thebibliography}{9}%宽度9
 		\bibitem{bib:one} ....
 	\end{thebibliography}
