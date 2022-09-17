@@ -1,6 +1,7 @@
 \documentclass{cumcmthesis}
 %\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
-
+%\usepackage{graphicx}
+%\usepackage{subfigure}
 \usepackage{tabularx}
 \title{论文题目}
 \tihao{C}            % 题号
@@ -39,6 +40,23 @@
 	\section{问题分析}
 		\subsection{问题一:}
 		\subsection{问题二:}
+		在问题二中，我们首先假设对于任意的$D_i$,通过测量$D_0,D_1,D_j$三个无人机的位置，得到两个小角$\alpha_1,\alpha_2$，进而能够确定自己在$D_0 - D_1$坐标系中的位置。
+		
+		可以假定的是，对于任意的$D_i$，在接收其他无人机的发射信号时，有以下公共知识：
+		\begin{itemize}
+			\item	位置待定无人机自身的编号$i$,
+			\item	可以辨识从$D_0$与$D_1$发出的信号，但不确定第三个信号来源,
+			\item	无人机机群的结构，即各个编号无人机在圆上的大致位置与顺序，任意两个无人机不能交换顺序,
+			\item 	待定无人机相对于理想位置的偏差较小，即$ {\lVert \omega_i \rVert}^2 < r_0 $.
+		\end{itemize}
+		\begin{figure}[htb]
+			\centering
+			\subfloat[组态1]{\includegraphics[width=0.4\linewidth]{../figures/1}}
+			\subfloat[组态2]{\includegraphics[width=0.4\linewidth]{../figures/2}}
+			\caption{可能出现的两种组态}
+			\label{fig1}
+		\end{figure}
+		基于以上公共知识，需要设计算法$D_i = f(\alpha_1, \alpha_2)$求解$D_i$在$D_0 - D_1$坐标系中的位置。
 		\subsection{问题三:}
 %----------- 三、模型的假设与约定 ----------
 	\section{模型的假设与约定}
@@ -102,7 +120,16 @@
 			\subsubsection{问题一的具体求解}
 			
 		\subsection{问题二}
-			\subsubsection{title}
+			经过我们的研究，我们认为需要除了在圆心的0号，还需要在圆弧上的1号和另外一个j号共三架飞机发射信号才能确定任意一架飞机i的位置。我们的位置解算算法遵循机组组态分析、推断匿名第三者编号、可行域分割的步骤求出$D_i$的坐标。在使用逐步分割可行域的方式求解位置坐标时，我们针对多解的情况，着重讨论了对于“略有偏差”的数学定义。
+			\subsubsection{算法的求解过程分析}
+			对于问题$D_i = f(\alpha_1, \alpha_2)$，我们首先需要确定第三架飞机是标签为几的飞机。以待测飞机为2号机，匿名第三信号发射机为3号机为例，建立数学几何模型。
+			\paragraph{机组组态分析}
+			待测飞机为2号机的情况下，2号机接收到的三个角度值遵循$\angle D_jD_2D_1 =\angle D_jD_2D_0 + \angle D_jD_2D_1$,符合\ref{fig1}中所示组态1的类型。
+			\paragraph{匿名第三者位置分析}
+			在组态1的情况下，匿名第三者编号$j=3,4,5,6$中的一个。
+			\paragraph{可行域分割}
+			对于所有可能的$D_j$,现已确定$\angle D_jD_2D_0 = \alpha_1$,$|D_jD_0|= r$,对于此类定弦定角问题，有优弧$\overset{\frown}{D_jD_2D_0}$上的点为所有可能的$D_2$的位置。
+			对于确定的$\angle D_0D_2D_1 = \alpha_2$,$|D_1D_0|= r$优弧$\overset{\frown}{D_0D_2D_1}$上的所有点为所有可能的的$D_2$的位置。
 			\subsubsection{title}
 			\subsubsection{title}
 		\subsection{问题三}
