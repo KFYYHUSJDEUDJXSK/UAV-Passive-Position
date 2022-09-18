@@ -208,10 +208,10 @@
 			根据我们的模拟，我们有如下临界情况,见图\ref{fig12}.
 			\begin{figure}[htb]
 				\centering
-				\subfloat[待测无人机为$D_3$时的边界情况]{\includegraphics[width=0.5\linewidth]{../figures/12}}
+				\subfloat[待测无人机为$D_3$时的边界情况]{\includegraphics[width=0.45\linewidth]{../figures/12}}
 				\subfloat[待测无人机为$D_4$时的边界情况]{\includegraphics[width=0.5\linewidth]{../figures/13}}
 				\\
-				\subfloat[待测无人机为$D_5$时的边界情况]{\includegraphics[width=0.5\linewidth]{../figures/14}}
+				\subfloat[待测无人机为$D_5$时的边界情况]{\includegraphics[width=0.55\linewidth]{../figures/14}}
 				\caption{不同待测无人机唯一解边界情况}
 				\label{fig12}
 			\end{figure}
@@ -235,7 +235,7 @@
 			\end{itemize}
 			
 		\subsection{问题一(3)}
-			\par 我们将问题三分为两个子问题：
+			\par 我们将问题一（3）分为两个子问题：
 			\begin{itemize}
 				\item 选择发射信号飞机数量
 				\item 设计无人机编队位置调整方案
@@ -248,26 +248,11 @@
 				\item 迭代次数
 				\item 总电磁信号发送次数：基于电磁静默原则，总电磁信号发送次数尽可能越小越好。其值为：发射信号无人机数量$\times$迭代调整次数
 			\end{itemize}
-			%在本问中发射信号的无人机可能与其理想位置略有偏差，对待定位无人机的得到方%向信息带来误差。若每次选择相同的无人机来发射信号，会使误差产生累计，导致%其余无人机不仅不会收敛到理想位置，还会与理想位置的偏差越来越大。为了在一定程度上消除误差，每次随机在圆上选取planeB(planeB不为planeA)，因为基于随机的方法和初始情况下，无人机在理想位置周围有一个较小的随机偏差，随机选取发射信号无人机可以使得多次迭代之间的方向信息误差相互中和。
+			在本问中发射信号的无人机可能与其理想位置略有偏差，对待定位无人机的得到方向信息带来误差。若每次选择相同的无人机来发射信号，会使误差产生累计，导致其余无人机不仅不会收敛到理想位置，还会与理想位置的偏差越来越大。为了在一定程度上消除误差，每次随机在圆上选取planeB(planeB不为planeA)，因为基于随机的方法和初始情况下，无人机在理想位置周围有一个较小的随机偏差，随机选取发射信号无人机可以使得多次迭代之间的方向信息误差相互中和。
 			
-			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-			\subsubsection{}
-			\paragraph{双机定位与三机定位的误差分析}
-			如图\ref{fig16}所示，我们将定位每一轮次中的定位情形作此抽象。对于发射信号的三架无人机$D_2,D_5,D_8$,有其实际位置$\widehat{D_2}\in C_2,\widehat{D_5} \in C_1,\widehat{D_8}\in C_3$,$C_1,C_2,C_3$为对应无人机的“微小偏差”区域（比例有所夸张），同时有待定位的无人机$\widehat{D_3}$,此时待定位无人机共能测得三个夹角$\angle \widehat{D_5}\widehat{D_3}D_0$,$\angle D_0\widehat{D_3}\widehat{D_8}$,$\angle \widehat{D_8}\widehat{D_3}\widehat{D_2}$。此时选取其中两个无人机就可以使用上述方法确定D的坐标，此时的三个测量值记为$D_{30},D_{31},D_{32}$。在双机定位的情况下若测量结果为$D_{30}$，此时的误差就是$|\overrightarrow{\widehat{D_3}D_{30}}|$，而在三机定位的情况下，存在一定概率使$\overrightarrow{\widehat{D_3}D_{30}}+\overrightarrow{\widehat{D_3}D_{31}}+\overrightarrow{\widehat{D_3}D_{32}} < min\{\overrightarrow{\widehat{D_3}D_{30}},\overrightarrow{\widehat{D_3}D_{31}},\overrightarrow{\widehat{D_3}D_{33}}\}$从而降低误差。
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.5\linewidth]{./figures/16}
-				\caption{定位问题的数学抽象}
-				\label{fig16}
-			\end{figure}
-			不可否认的是，在此种情况下，亦存在$\overrightarrow{\widehat{D_3}D_{30}}+\overrightarrow{\widehat{D_3}D_{31}}+\overrightarrow{\widehat{D_3}D_{32}} > min\{\overrightarrow{\widehat{D_3}D_{30}},\overrightarrow{\widehat{D_3}D_{31}},\overrightarrow{\widehat{D_3}D_{33}}\}$的情况，为了验证本方法是否可行，对于使用计算机对于随机情况进行统计分析。
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.75\linewidth]{./figures/15}
-				\caption{多次采样下双机与三机系统的平均误差}
-				\label{fig15}
-			\end{figure}
-			经过1000次随机采样，使用双机与三机系统对圆上每个点进行位置计算的平均误差如图\ref{fig15}所示。经统计分析，在双机系统进行位置计算时，平均误差约为$0.12R$，而使用多机系统时，平均误差降至$0.086R$，有$28.3\%$的性能提升。
+		
+			
+			
 			
 			\paragraph{对于一种特殊情况的讨论}
 			在建模的过程中，我们意识到了一种特殊情况如图\ref{fig17},此时所有圆上的无人机都均匀分布或近似均匀分布在圆上，但圆心$D_0$偏移到了$\widehat{D_0}$的位置，此时也可以使用上述方法进行调整，使新圆的圆心为$\widehat{D_0}$。然而，此时最有的调整方案应该是移动圆心的位置使其回到$D_0$，但是考虑到本题需要在每次令中心无人机发射信号，\textbf{其余}无人机接收信号，中心无人机不能获取自身的位置信息，所以调整圆心的方案不可行。
@@ -278,9 +263,6 @@
 				\label{fig17}
 			\end{figure}
 			
-			
-			
-			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%差两种选择的分析%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			
 			
 			\subsubsection{无人机编队位置调整方案}
@@ -304,12 +286,29 @@
 			\paragraph{无人机位置调整}
 			定义偏差$w$为无人机理想位置与估计位置的偏差：$\boldsymbol{w}=(x_{ideal},y_{ideal}) - (\hat{x},\hat{y})$，设置参数$\eta{}$，以$\boldsymbol{w}$作为位移调整位置，调整后的位置$(x_{new},y_{new})$为：$(x_{new},y_{new})= (x_{actual},y_{actual}) - \eta{} * \boldsymbol{w}$。
 			\par 调整结果如下图\ref{Polar}所示，可以看到调整后的各个无人机较为均匀的分布在统一圆周上：
-			\begin{figure}[htb]
+			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.7\linewidth]{./figures/Polar Axis}
+				\includegraphics[width=0.5\linewidth]{./figures/Polar Axis}
 				\caption{迭代调整后的结果对比图}
 				\label{Polar}
 			\end{figure}
+		\paragraph{双机定位与三机定位的误差分析}
+		如图\ref{fig16}所示，我们将定位每一轮次中的定位情形作此抽象。对于发射信号的三架无人机$D_2,D_5,D_8$,有其实际位置$\widehat{D_2}\in C_2,\widehat{D_5} \in C_1,\widehat{D_8}\in C_3$,$C_1,C_2,C_3$为对应无人机的“微小偏差”区域（比例有所夸张），同时有待定位的无人机$\widehat{D_3}$,此时待定位无人机共能测得三个夹角$\angle \widehat{D_5}\widehat{D_3}D_0$,$\angle D_0\widehat{D_3}\widehat{D_8}$,$\angle \widehat{D_8}\widehat{D_3}\widehat{D_2}$。此时选取其中两个无人机就可以使用上述方法确定D的坐标，此时的三个测量值记为$D_{30},D_{31},D_{32}$。在双机定位的情况下若测量结果为$D_{30}$，此时的误差就是$|\overrightarrow{\widehat{D_3}D_{30}}|$，而在三机定位的情况下，存在一定概率使$\overrightarrow{\widehat{D_3}D_{30}}+\overrightarrow{\widehat{D_3}D_{31}}+\overrightarrow{\widehat{D_3}D_{32}} < min\{\overrightarrow{\widehat{D_3}D_{30}},\overrightarrow{\widehat{D_3}D_{31}},\overrightarrow{\widehat{D_3}D_{33}}\}$从而降低误差。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\linewidth]{./figures/16}
+			\caption{定位问题的数学抽象}
+			\label{fig16}
+		\end{figure}
+		不可否认的是，在此种情况下，亦存在$\overrightarrow{\widehat{D_3}D_{30}}+\overrightarrow{\widehat{D_3}D_{31}}+\overrightarrow{\widehat{D_3}D_{32}} > min\{\overrightarrow{\widehat{D_3}D_{30}},\overrightarrow{\widehat{D_3}D_{31}},\overrightarrow{\widehat{D_3}D_{33}}\}$的情况，为了验证本方法是否可行，对于使用计算机对于随机情况进行统计分析。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.75\linewidth]{./figures/15}
+			\caption{多次采样下双机与三机系统的平均误差}
+			\label{fig15}
+		\end{figure}
+		经过1000次随机采样，使用双机与三机系统对圆上每个点进行位置计算的平均误差如图\ref{fig15}所示。经统计分析，在双机系统进行位置计算时，平均误差约为$0.12R$，而使用多机系统时，平均误差降至$0.086R$，有$28.3\%$的性能提升。
+		
 			\paragraph{调整方案伪代码}
 			调整方案的伪代码如下所示:
 			\par
@@ -322,7 +321,7 @@
 				{
 					\#选择三架分布均匀的无人机作为一组承担发射信号的任务。
 					\par  $ launch[i] =(launch[i-1] + 3) \% 9 $
-					\par \For{$ i in range(1,10) 且 i ≠ launch[i] $ }
+					\par \For{$ i\ in range(1,10) \text{且} i ≠ launch[i] $ }
 					{
 						计算三架无人机中任意两架与待定位无人机的夹角 $\alpha[i],i=1,2,3 $ \;
 						进而转化为第一问的情况可以计算三组测量坐标

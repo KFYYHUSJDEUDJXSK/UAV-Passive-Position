@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.optimize import root
 
+
 # 为了便于运算，中间的角度均采用弧度制
 def get_angle(point): #对point[0,1,2]，返回以1为顶点的角度
     # 得到直角坐标
