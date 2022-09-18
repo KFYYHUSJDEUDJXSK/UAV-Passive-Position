@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.optimize import root
+
 from problem1 import get_angle
 
 # 计算以某个发射信号的固定飞机与原点为弦长，测量的角度为半径的圆
@@ -17,7 +18,7 @@ def get_circle(theta,alpha):
     return r,np.array([x0_1,y0_1]),np.array([x0_2,y0_2])
 
 def get_intersection(x,center_1,center_2):
-    x =
+    x =center_1 + center_2
     return x
 '''problem 2'''
 # 载入数据
