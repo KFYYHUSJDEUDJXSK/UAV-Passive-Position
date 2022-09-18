@@ -208,12 +208,12 @@ if __name__ == "__main__":
     plt.plot(x, _mean_mul, label="三机定位")
     plt.fill_between(x, _mean_mul - _std_mul, _mean_mul + _std_mul
                      , color='r', alpha=0.1)
-    plt.title("多次采样下单机定位与多机定位的平均误差")
+    plt.title("多次采样下双机定位与多机定位的平均误差")
     plt.xlabel("采样数x10")
     plt.ylabel("相对误差")
     plt.legend(loc="lower right")
     plt.grid()
-    plt.savefig("./fig.png")
+    plt.savefig("./fig.jpg")
     plt.show()
 
 
