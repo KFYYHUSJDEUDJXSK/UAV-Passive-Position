@@ -170,9 +170,8 @@ for i in range(1, 16):
     actual[i, 1] = ideal[i, 1] + noise_rho * np.sin(noise_theta)
 # 理想位置+随机噪声=实际位置
 print(actual)
-ax = plt.subplot(1, 2, 1)
-plt.scatter(actual[1:, 0], actual[1:, 1], color='r')
-plt.title('锥形编队调整前')
+fig,ax=plt.subplots()
+ax.scatter(actual[1:, 0], actual[1:, 1], color='r',marker='o',label='锥形编队调整前')
 
 print('调整前：')
 length = []
@@ -345,13 +344,11 @@ index_launch[0, :] = np.array([6, 9, 14])
 index_launch[1, :] = np.array([13, 9, 10])
 # 圆心
 index_center = np.array([10, 14])
-
 launch = np.zeros(3)
 
 for iter in range(iter_max):
     # 选择发送信号无人机
     launch = index_launch[iter % 2, :].tolist()
-
     center = index_center[iter % 2]
     # 对待调整无人机1进行调整
     i = 15
@@ -376,8 +373,12 @@ print('length')
 print(length)
 
 print('position_hat', position_hat)
-
-ax = plt.subplot(1, 2, 2)
-plt.scatter(position_hat[1:, 0], position_hat[1:, 1], color='b')
-plt.title('锥形编队调整后')
+ax.scatter(position_hat[1:, 0], position_hat[1:, 1], color='b',marker='*',label='锥形编队调整后')
+for i in range(1,16):
+    for j in range(1,16):
+        if graph[i,j]:
+            ax.plot([position_hat[i,0],position_hat[j,0]],[position_hat[i,1],position_hat[j,1]], c='g', linestyle='--',alpha=0.5)
+            # ax.plot([actual[i,0],actual[j,0]],[actual[i,1],actual[j,1]], c='b', linestyle='--',alpha=0.5)
+ax.set_title('锥形编队调整前后对比')
+ax.legend()
 plt.show()

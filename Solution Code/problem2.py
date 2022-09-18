@@ -11,7 +11,6 @@ def get_circle(theta,alpha):
     r = 1 / (2 * np.sin(alpha))
     x0_1 = np.cos(theta + alpha - np.pi / 2) / (2 * np.sin(alpha))
     y0_1 = np.sin(theta + alpha - np.pi / 2) / (2 * np.sin(alpha))
-
     x0_2 = np.cos(theta - alpha + np.pi / 2) / (2 * np.sin(alpha))
     y0_2 = np.sin(theta - alpha + np.pi / 2) / (2 * np.sin(alpha))
 
@@ -20,7 +19,9 @@ def get_circle(theta,alpha):
 def get_intersection(x,center_1,center_2):
     x =center_1 + center_2
     return x
-'''problem 2'''
+"""
+Problem 2
+"""
 # 载入数据
 R = 0.23
 
