@@ -1,8 +1,10 @@
-import numpy as np
 import random
-from scipy.optimize import root
-from problem1 import get_angle,f_p2
+
+import numpy as np
 from matplotlib import pyplot as plt
+from scipy.optimize import root
+
+from problem1 import f_p2, get_angle
 
 # 载入数据
 plane = np.array([[0, np.deg2rad(0)], [100, np.deg2rad(0)], [98, np.deg2rad(40.10)],

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.27)  15 SEP 2022 16:22
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.27)  18 SEP 2022 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1436,8 +1436,19 @@ File: lstlang3.sty 2020/03/24 1.8d listings language file
 (d:/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ) [2]
-File: figures//smokeblk.pdf Graphic file (type pdf)
-<use figures//smokeblk.pdf>
+
+! LaTeX Error: File `smokeblk' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148 ...udegraphics[width=.6\textwidth]{smokeblk}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.eps,.jpg,.png
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
 Package fontspec Warning: Font "FandolSong-Regular" does not contain requested
@@ -1463,17 +1474,77 @@ Package fontspec Info: Font family 'FandolSong-Regular(1)' created for font
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3]
-File: figures//f1.png Graphic file (type bmp)
-<figures//f1.png>
-File: figures//f1.png Graphic file (type bmp)
-<figures//f1.png>
-File: figures//f1.png Graphic file (type bmp)
-<figures//f1.png>
-File: figures//cat.pdf Graphic file (type pdf)
-<use figures//cat.pdf>
-File: figures//smokeblk.pdf Graphic file (type pdf)
-<use figures//smokeblk.pdf>
- [4] [5] [6] [7]
+
+! LaTeX Error: File `f1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163 ...includegraphics[width=0.95\textwidth]{f1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.eps,.jpg,.png
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `f1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 ...includegraphics[width=0.95\textwidth]{f1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.eps,.jpg,.png
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `f1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.175 ...includegraphics[width=0.95\textwidth]{f1}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.eps,.jpg,.png
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `cat' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 ...cludegraphics[height=0.2\textheight]{cat}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.eps,.jpg,.png
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `smokeblk' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.194 ...graphics[height=0.2\textheight]{smokeblk}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.eps,.jpg,.png
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[4] [5] [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 367.
@@ -1510,6 +1581,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 371.
 
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 387.
@@ -1535,25 +1607,28 @@ Overfull \hbox (0.26587pt too wide) in paragraph at lines 389--390
 /n/12.05 加粗\TU/lmtt/m/n/12.05 }
  []
 
-[8] [9] (d:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+[8] (d:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [10]
+) [9]
 (d:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (d:/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) [11] (./example.aux)
+) [10] (./example.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `example.out' has not changed.
 (rerunfilecheck)             Checksum: 21CB5B5709BE912BE1A2D35C4BDBFC0C;1511.
  ) 
 Here is how much of TeX's memory you used:
- 34023 strings out of 477694
- 692270 string characters out of 5835035
- 1237249 words of memory out of 5000000
- 53315 multiletter control sequences out of 15000+600000
+ 34007 strings out of 477694
+ 691874 string characters out of 5835035
+ 1237099 words of memory out of 5000000
+ 53309 multiletter control sequences out of 15000+600000
  415968 words of font info for 149 fonts, out of 8000000 for 9000
  670 hyphenation exceptions out of 8191
  116i,10n,118p,491b,2766s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on example.pdf (11 pages).
+Output written on example.pdf (10 pages).

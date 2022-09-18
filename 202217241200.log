@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.27)  18 SEP 2022 19:38
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.27)  18 SEP 2022 19:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**202214271200.tex
-(./202214271200.tex
+**202217241200.tex
+(./202217241200.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (./cumcmthesis.cls
 Document Class: cumcmthesis 2017/09/16 v2.6 Standard LaTeX Template for CUMCM
@@ -959,8 +959,8 @@ LaTeX Font Info:    Overwriting symbol font `yhlargesymbols' in version `bold'
 (Font)                  OMX/yhex/m/n --> OMX/yhex/m/n on input line 30.
 \symugmL=\mathgroup10
 LaTeX Font Info:    Redeclaring math accent \wideparen on input line 32.
- (./202214271200.aux)
-\openout1 = `202214271200.aux'.
+ (./202217241200.aux)
+\openout1 = `202217241200.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
@@ -1102,9 +1102,9 @@ LaTeX Info: Redefining \ref on input line 35.
 LaTeX Info: Redefining \pageref on input line 35.
 LaTeX Info: Redefining \nameref on input line 35.
 
-(./202214271200.out) (./202214271200.out)
+(./202217241200.out) (./202217241200.out)
 \@outlinefile=\write4
-\openout4 = `202214271200.out'.
+\openout4 = `202217241200.out'.
 
 LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 41.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
@@ -1882,7 +1882,7 @@ File: ./figures/m1.png Graphic file (type bmp)
 <./figures/m1.png>
 File: ./figures/m2.png Graphic file (type bmp)
 <./figures/m2.png>
-(./202214271200.bbl [20])
+(./202217241200.bbl [20])
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 499.
@@ -1964,20 +1964,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 971.
 
-[32] [33] (./202214271200.aux)
+[32] [33] (./202217241200.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `202214271200.out' has not changed.
+Package rerunfilecheck Info: File `202217241200.out' has not changed.
 (rerunfilecheck)             Checksum: C6ADA5BF89BDCECA612CD2A7A855E86B;4736.
  ) 
 Here is how much of TeX's memory you used:
  23839 strings out of 477694
  485789 string characters out of 5835035
- 1097340 words of memory out of 5000000
+ 1096339 words of memory out of 5000000
  43310 multiletter control sequences out of 15000+600000
  429837 words of font info for 190 fonts, out of 8000000 for 9000
  670 hyphenation exceptions out of 8191
  116i,24n,118p,836b,2605s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 202214271200.pdf (33 pages).
+Output written on 202217241200.pdf (33 pages).

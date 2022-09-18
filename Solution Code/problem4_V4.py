@@ -79,16 +79,6 @@ def measure2estimate(xy2polar, get_angle_xy, R, ideal, actual, i, position_hat, 
     position_hat_temp = position_now_xy + lr * w
     position_hat[i, :] = position_hat_temp
 # 为了便于运算，中间的角度均采用弧度制
-
-def get_angle_xy(x):  # 对point[0,1,2]，返回以1为顶点的角度
-    # 得到夹角
-    vec_10 = x[0, :] - x[1, :]
-    vec_12 = x[2, :] - x[1, :]
-
-    cos_angle = np.dot(vec_10, vec_12) / ((np.sqrt(np.dot(vec_10, vec_10)) * np.sqrt(np.dot(vec_12, vec_12))) + 1e-6)
-    angle = np.arccos(cos_angle)
-    return angle
-
 """
 Description:设置超参数
 """
