@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from scipy.optimize import root
 
-from problem1 import f_p2, get_angle
+from problem1 import f_p2, get_angle_xy
 
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
@@ -294,7 +294,6 @@ index_launch = np.zeros((2, 3))
 index_launch[0, :] = np.array([12, 8, 4])
 index_launch[1, :] = np.array([13, 8, 7])
 
-# 圆心
 index_center = np.array([7, 12])
 
 launch = np.zeros(3)
@@ -302,9 +301,8 @@ launch = np.zeros(3)
 for iter in range(iter_max):
     # 选择发送信号无人机
     launch = index_launch[iter % 2, :].tolist()
-
     center = index_center[iter % 2]
-    # 对待调整无人机11进行调整
+    # 调整无人机11
     i = 11
     measure2estimate(xy2polar, get_angle_xy, R, ideal, actual, i, position_hat, lr, launch, center)
 
@@ -321,7 +319,6 @@ launch = np.zeros(3)
 for iter in range(iter_max):
     # 选择发送信号无人机
     launch = index_launch[iter % 2, :].tolist()
-
     center = index_center[iter % 2]
     # 对待调整无人机1进行调整
     i = 1
@@ -332,7 +329,7 @@ for iter in range(iter_max):
 index_launch = np.zeros((2, 3))
 index_launch[0, :] = np.array([6, 9, 14])
 index_launch[1, :] = np.array([13, 9, 10])
-# 圆心
+
 index_center = np.array([10, 14])
 launch = np.zeros(3)
 
