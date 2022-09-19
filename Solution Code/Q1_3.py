@@ -1,40 +1,38 @@
 import numpy as np
 import random
 from scipy.optimize import root
-from problem1 import get_angle,f_p2
+from Q1_1 import get_angle,f_p2
 from matplotlib import pyplot as plt
 
 # 两个三个飞机随机
 # 载入数据
-plane = np.array([[0, np.deg2rad(0)], [100, np.deg2rad(0)], [98, np.deg2rad(40.10)],
+plane = np.array([[10, np.deg2rad(0)], [100, np.deg2rad(0)], [98, np.deg2rad(40.10)],
                   [112, np.deg2rad(80.21)], [105, np.deg2rad(119.75)], [98, np.deg2rad(159.86)],
                   [112, np.deg2rad(199.96)], [105, np.deg2rad(240.07)], [98, np.deg2rad(280.17)],
                   [112, np.deg2rad(320.28)]])
 
 plane_hat = plane
-iter_max = 100
-lr = 0.5
+iter_max = 5
+lr = 1
 d = 100
 fixed = 1
-t = 0.1
+t = 1
 
 position_remember_xy = np.zeros((10,2))
 
 launch = np.zeros(3)
+start = 3 # 开始轮循的第一架飞机
 
-for iter in range(iter_max):
-    # 随机选择三个无人机
-    launch[0]=random.randint(1, 9)
+for iter in range(start,start + iter_max):
+    launch[0] = iter % 9 + 1
     # launch_1 += 1
     # launch_1 = launch_1 % 9 + 1
-    while 1:
-        launch[1] = random.randint(1, 9)
-        if launch[1] != launch[0]:
-            break
-    while 1:
-        launch[2] = random.randint(1, 9)
-        if (launch[2] != launch[1]) and (launch[2] != launch[0]):
-            break
+    launch[1] = (launch[0] + 3) % 9
+    if launch[1] == 0:
+        launch[1] = 9
+    launch[2] = (launch[1] + 3) % 9
+    if launch[2] == 0:
+        launch[2] = 9
 
     # 发射信号,其余无人机得到角度
     for i in range(1,10):
@@ -102,11 +100,43 @@ for iter in range(iter_max):
 
 print('/******************************************************/')
 print('plane_hat')
+'''
+for i in range(10):
+    plane_hat[i,1] = np.rad2deg(plane_hat[i,1])
+'''
 print(plane_hat)
 
 
 ax1 = plt.subplot(121, projection='polar')  #极坐标轴
 # ax1.scatter(plane[:,1],plane[:,0],color='r')
 ax1.scatter(plane_hat[:,1],plane_hat[:,0],color='b')
+
+
 plt.show()
+
+print(360-359.93761995)
+pro_max_min= np.max(plane_hat[1:,0]) - np.min(plane_hat[1:,0])
+pro_mean = np.mean(plane_hat[1:,0])
+print('mean:',pro_mean)
+print('max_min:',pro_max_min)
+print('pho_wucha:',pro_max_min / pro_mean)
+
+delta_theta = np.zeros(9)
+for i in range(9):
+    next = i
+    if next == 0:
+        next =9
+
+    delta_theta[i] = plane_hat[i+1,1] - plane_hat[next,1]
+
+    if delta_theta[i] < 0:
+        delta_theta[i] = 360 + delta_theta[i]
+
+print('delta_theta',delta_theta)
+theta_max_min= np.max(delta_theta) - np.min(delta_theta)
+theta_mean = np.mean(delta_theta)
+print('mean:',theta_mean)
+print('max_min:',theta_max_min)
+print('pho_wucha:',theta_max_min / theta_mean)
+
 

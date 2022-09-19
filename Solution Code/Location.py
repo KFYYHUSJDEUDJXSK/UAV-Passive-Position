@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.optimize import root
 
+
 # 为了便于运算，中间的角度均采用弧度制
 def get_angle(point): #对point[0,1,2]，返回以1为顶点的角度
     # 得到直角坐标
@@ -44,7 +45,7 @@ def f_p2(x,c): #x:[ro,theta],c:[alpha1,alpha2,beta],角用弧度制表示
 # 对问题二，尝试加一架编号未知的飞机，接触被测目标飞机的位置
 # 输入：设发信号的编号未知飞机为?，被测飞机为x,三个角度信息theta[0x1,0x?,1x?]
 # 求解变量: x[pho,theta,beta] (beta为编号未知的飞机的极角)
-'''有问题没搞完'''
+
 '''
 def test_for_p2(x,theta):
     beta = 0
@@ -116,32 +117,6 @@ print(point)
 
 print('point_hat')
 print(point_hat)
-'''
-# 得到10个点的坐标
-point = np.zeros((10,2))
-point[0] = (0,0)
-for i in range(1,10):
-    point[i] = (100,i * 2 * np.pi / 9)
-print(point)
 
-# 建立 0i1的角度(1=2,5)
-# angle:角0i1(i=2...9)
-angle_1 = np.zeros(8)
-for i in range(0,8):
-    angle_1[i] = get_angle(np.array([point[0],point[i+2],point[1]]))
-
-print(angle_1)
-# 得到角0x？
-x=5
-unknown = 2
-angle_to_unknown = get_angle(np.array([point[0],point[x],point[unknown]]))
-print(angle_to_unknown)
-
-# 得到角01i的(i=2...9)
-angle_01i = np.zeros(8)
-for i in range(0,8):
-    angle_01i[i] = get_angle(np.array([point[0],point[1],point[i+2]]))
-print('angle_0i1',angle_01i)
-'''
 
 

@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from scipy.optimize import root
 
-from problem1 import f_p2, get_angle_xy
+from Q1_1 import f_p2, get_angle_xy
 
 plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False

@@ -1,8 +1,10 @@
-import numpy as np
 import random
-from scipy.optimize import root
-from problem1 import get_angle, f_p2
+
+import numpy as np
 from matplotlib import pyplot as plt
+from scipy.optimize import root
+
+from Q1_1 import f_p2, get_angle_xy
 
 
 # 为了便于运算，中间的角度均采用弧度制
